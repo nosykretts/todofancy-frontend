@@ -1,5 +1,8 @@
 <template>
-  <todo-list/>
+  <div>
+    <h1>This is Home</h1>
+    <todo-list/>
+  </div>
 </template>
 
 <script>
