@@ -10,23 +10,28 @@
     <el-container>
       <el-header>
         <headerx/>
-      </el-header>  
+      </el-header>
       <el-main>
         <el-row :gutter="0">
           <el-col :xs="{span:24}" :sm="{span:15,offset:4}" :md="{span: 10, offset:7}">
             <router-view/>    
           </el-col>
-        </el-row>        
+        </el-row>
       </el-main>
     </el-container>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Headerx from '@/components/Headerx'
+import { Message } from 'element-ui'
 
 export default {
   name: 'app',
+  computed: {
+    ...mapGetters(['errorMessage'])
+  },
   components : {
     Headerx
   }
@@ -99,32 +104,32 @@ body{
 }
 
  button{
-            white-space: nowrap;
-            display: inline-block;
-            height: 40px;
-            line-height: 40px;
-            padding: 0 14px;
-            -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-            box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-            background: #62d5ab;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: .025em;
-            color: #fff;
-            text-decoration: none;
-            -webkit-transition: all .15s ease;
-            transition: all .15s ease;
-            text-shadow: 0 1px 3px rgba(36,180,126,.4);
-            -webkit-tap-highlight-color: transparent;
-            border: none;
-            outline: 0;
-            cursor: pointer;
-            position: relative;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box
-        }
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  background: #62d5ab;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
 </style>
 
 
