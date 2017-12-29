@@ -3,28 +3,16 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import TodoList from '@/components/TodoList'
 import LoginPage from '@/components/LoginPage'
-import PrivacyPage from '@/components/PrivacyPage'
+
 Vue.use(Router)
 
 let commonRoute = [
-  // {
-  //   path: '/',
-  //   name: 'homePage',
-  //   component: Home,
-  //   meta : {}
-  // },
   {
     path: '/',
     name: 'loginPage',
     component: LoginPage,
     meta : {}
   },
-  {
-    path: '/privacypolicy',
-    name: 'privacyPolicy',
-    component: PrivacyPage,
-    meta : {}
-  },  
 ]
 
 let authRoute = [
@@ -41,13 +29,8 @@ authRoute = authRoute.map(route => {
   return route
 })
 
-// commonRoute = commonRoute.map(route => {
-  
-//   return route
-// })
-
 const router = new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     ...authRoute,
     ...commonRoute
