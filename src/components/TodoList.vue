@@ -1,20 +1,24 @@
 <template>
-  <el-card class="box-card" :body-style="{ padding: '0px' }">
-    <div slot="header" class="clearfix">
-      <todo-input @onFinishEdit="addTodo" />
-    </div>
-    <todo v-for="todo in todos" :key="todo._id" :todo="todo" />
-  </el-card>
+  <div>
+    <el-card class="box-card" :body-style="{ padding: '0px' }">
+      <div slot="header" class="clearfix">
+        <todo-input @onFinishEdit="addTodo" />
+      </div>
+      <todo v-for="todo in todos" :key="todo._id" :todo="todo" />
+    </el-card>
+    <logout-button/>
+  </div>
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 import TodoInput from '@/components/TodoInput'
 import Todo from './Todo'
+import LogoutButton from '@/components/LogoutButton'
 
 export default {
   name: 'TodoList',
-  components: {Todo, TodoInput},
+  components: { Todo, TodoInput, LogoutButton },
   data() {
     return {}
   },

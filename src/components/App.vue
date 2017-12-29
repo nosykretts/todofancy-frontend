@@ -9,14 +9,14 @@
     </div>
     <el-container>
       <el-header style="height: auto !important;">
-          <el-col :xs="{span:24}" :sm="{span:16,offset:4}" :md="{span: 12, offset:6}">
-            <headerx/>
-          </el-col>
+        <el-col :xs="{span:24}" :sm="{span:16,offset:4}" :md="{span: 12, offset:6}">
+          <headerx/>
+        </el-col>
       </el-header>
       <el-main>
         <el-row :gutter="0">
           <el-col :xs="{span:24}" :sm="{span:16,offset:4}" :md="{span: 12, offset:6}">
-            <router-view/>
+            <router-view></router-view>
           </el-col>
         </el-row>
       </el-main>
@@ -30,28 +30,27 @@
 </template>
 
 <script>
-import {mapGetters, mapActions, mapMutations, mapState} from 'vuex'
-import {Message} from 'element-ui'
+import { mapGetters, mapActions, mapMutations, mapState } from 'vuex'
+import { Message } from 'element-ui'
 import Headerx from '@/components/Headerx'
 
 export default {
   name: 'app',
   data() {
-    return {
-    }
+    return {}
   },
   computed: {
-    ...mapGetters(['errorMessage','notify']),
+    ...mapGetters(['errorMessage', 'notify']),
   },
   methods: {
-    showMessage(){
-      Message({...this.notify})
+    showMessage() {
+      Message({ ...this.notify })
     },
   },
   watch: {
     notify() {
       this.showMessage()
-    }
+    },
   },
   components: {
     Headerx,
@@ -64,9 +63,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background:#343434;
+  background: #343434;
 }
-#app{
+#app {
   padding-top: 20px;
 }
 
@@ -84,7 +83,7 @@ body {
   padding: 10px 0;
 }
 
-.footer{
+.footer {
   text-align: center;
   color: white;
   font-size: larger;
@@ -173,28 +172,29 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.blue-purple{
-  background : #566df1;
-  text-shadow : 0 1px 3px rgb(93, 106, 181);
+.blue-purple {
+  background: #566df1;
+  text-shadow: 0 1px 3px rgb(93, 106, 181);
 }
-
 
 .beauty:not(:disabled):hover {
   color: white;
   background: #484559;
-    -webkit-transform: translateY(-1px);
-    transform: translateY(-1px);
-    -webkit-box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
-    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08)
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 .beauty:not(:disabled):active {
   color: white;
   background: #484559;
-    -webkit-transform: translateY(1px);
-    transform: translateY(1px);
-    -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
-    box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08)
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .fb-signin-button {

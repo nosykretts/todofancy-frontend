@@ -2,7 +2,6 @@
   <div :style="{background: background}">
     <el-input placeholder="What todo..." v-model="currentTitle" @keyup.enter.native="finishEdit" :disabled="readOnly" @dblclick.native="emitDblClick">
       <template v-if="!readOnly" slot="prepend">
-        <!-- <i v-if="!showEmoji" class="el-icon-picture" @click="toggleEmoji"></i> -->
         <div v-if="!showEmoji" @click="toggleEmoji">😀</div>
         <i v-if="showEmoji" class="el-icon-arrow-up" @click="toggleEmoji"></i>
       </template>

@@ -57,7 +57,6 @@ const mutations = {
   [types.USER_LOGOUT](state) {
     localStorage.removeItem('token')
     state.isLoggedIn = false
-    FB.logout()
     axios.defaults.headers.common['Authorization'] = 'Bearer jwt'
     router.push({ name: 'loginPage' })
   },
