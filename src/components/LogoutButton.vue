@@ -1,5 +1,5 @@
 <template>
-  <div class="logout-wrapper">
+  <div class="bottom-wrapper">
     <el-button v-if="isLoggedIn" @click="USER_LOGOUT" class="beauty" size="small">Logout</el-button>
   </div>
 </template>
@@ -18,11 +18,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.logout-wrapper{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-top : 50px;
-}
+<style>
+
 </style>

@@ -1,6 +1,7 @@
 <template>
   <el-row type="flex" justify="space-around" align="middle" :style="{height:'120px'}" class="headerx">
-    <div class="site-logo">todofancy</div>
+    <router-link to="/" class="site-logo">todofancy</router-link>
+    <!-- <a class="site-logo">todofancy</a> -->
     
   </el-row>
 </template>
@@ -22,9 +23,10 @@ export default {
 }
 </script>
 
-<style scoped>
-.site-logo{
+<style>
+.site-logo, .site-logo:hover, .site-logo:focus,  .site-logo:active{
   color: white;
+  border : none;
   font-size: 39px;
   font-weight :200;
 }

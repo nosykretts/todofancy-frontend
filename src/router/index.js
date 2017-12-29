@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import TodoList from '@/components/TodoList'
 import LoginPage from '@/components/LoginPage'
-
+import RegisterPage from '@/components/RegisterPage'
 Vue.use(Router)
 
 let commonRoute = [
@@ -11,6 +11,12 @@ let commonRoute = [
     path: '/',
     name: 'loginPage',
     component: LoginPage,
+    meta : {}
+  },
+  {
+    path: '/register',
+    name: 'registerPage',
+    component: RegisterPage,
     meta : {}
   },
 ]
@@ -31,6 +37,9 @@ authRoute = authRoute.map(route => {
 
 const router = new Router({
   mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  },  
   routes: [
     ...authRoute,
     ...commonRoute

@@ -8,10 +8,14 @@
 
           <el-button @click="login" class="beauty" style="width:100%; height:50px;">Login</el-button>
           <hr>
+          <!-- <p style="text-align:center; color:grey;">or</p> -->
           <fb-signin-button style="width:100%;" class="el-button beauty blue-purple" :params="fbSignInParams" @success="onFBSignInSuccess" @error="onFBSignInError">
             <span>Continue with Facebook</span>
           </fb-signin-button>
         </el-card>
+        <div class="bottom-wrapper">
+          <el-button @click="pushRegister" class="beauty">Register</el-button>
+        </div>           
     </div>
   </el-row>
 </template>
@@ -36,6 +40,9 @@ export default {
         email: this.email,
         password: this.password,
       })
+    },
+    pushRegister(){
+      this.$router.push({name: 'registerPage'})
     },
     onFBSignInSuccess(response) {
       this.$store.dispatch('loginWithFacebook', {

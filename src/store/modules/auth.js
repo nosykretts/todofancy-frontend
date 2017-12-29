@@ -28,6 +28,21 @@ const actions = {
         commit(types.NOTIFY_ERROR, err.response.data.message, { root: true })
       })
   },
+  register({ commit }, { name, email, password }) {
+    axios
+      .post('/auth/signup', {
+        name,
+        email,
+        password,
+      })
+      .then(() => {
+        commit(types.NOTIFY_INFO, 'Register success. Please login')
+        commit(types.USER_SIGNUP_SUCCESS)
+      })
+      .catch(err => {
+        commit(types.NOTIFY_ERROR, err.response.data.message, { root: true })
+      })
+  },
   loginWithFacebook({ commit }, payload) {
     axios
       .post('/auth/signinfacebook', payload)
@@ -53,6 +68,9 @@ const mutations = {
   [types.SIGNIN_FAILURE](state, { message }) {
     state.errorMessage = message
     Message.error(message)
+  },
+  [types.USER_SIGNUP_SUCCESS](state) {
+    router.push({name: 'loginPage'})
   },
   [types.USER_LOGOUT](state) {
     localStorage.removeItem('token')

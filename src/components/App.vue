@@ -82,7 +82,12 @@ body {
   border-bottom: 1px solid #dcdfe7;
   padding: 10px 0;
 }
-
+.bottom-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top : 50px;
+}
 .footer {
   text-align: center;
   color: white;
