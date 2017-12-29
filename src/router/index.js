@@ -47,7 +47,7 @@ authRoute = authRoute.map(route => {
 // })
 
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     ...authRoute,
     ...commonRoute
