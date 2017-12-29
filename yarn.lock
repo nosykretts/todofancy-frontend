@@ -1315,6 +1315,16 @@ compressible@~2.0.11:
   dependencies:
     mime-db ">= 1.30.0 < 2"
 
+compression-webpack-plugin@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.3.tgz#4b936c627eda09304e3153499ece7830289ab95a"
+  dependencies:
+    async "^2.4.1"
+    cacache "^10.0.1"
+    find-cache-dir "^1.0.0"
+    serialize-javascript "^1.4.0"
+    webpack-sources "^1.0.1"
+
 compression@^1.5.2:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/compression/-/compression-1.7.1.tgz#eff2603efc2e22cf86f35d2eb93589f9875373db"
@@ -1855,8 +1865,8 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.28:
     electron-releases "^2.1.0"
 
 element-ui@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.0.8.tgz#cee493530a8e7a3c69bb83dc22f252a5b9ce0a11"
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.0.9.tgz#d05ddbeeff1c122a0420c50bfa7e1039cb77da57"
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
@@ -1874,6 +1884,10 @@ elliptic@^6.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
+
+emoji-mart-vue@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/emoji-mart-vue/-/emoji-mart-vue-1.0.4.tgz#8c775ea5c71ce9d397305f3f7206b86ce2c65a1e"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -4962,6 +4976,12 @@ schema-utils@^0.3.0:
   dependencies:
     ajv "^5.0.0"
 
+script-ext-html-webpack-plugin@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/script-ext-html-webpack-plugin/-/script-ext-html-webpack-plugin-1.8.8.tgz#faa888a286ce746fcd06a5e0a9e39ed7b9d24f66"
+  dependencies:
+    debug "^3.1.0"
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -5468,7 +5488,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-uglify-es@^3.2.1:
+uglify-es@3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.2.2.tgz#15c62b7775002c81b7987a1c49ecd3f126cace73"
   dependencies:
@@ -5504,15 +5524,15 @@ uglifyjs-webpack-plugin@^0.4.6:
     webpack-sources "^1.0.1"
 
 uglifyjs-webpack-plugin@^1.1.1:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.4.tgz#e43ad6e736c315024eb99481a7cc9362d6a066be"
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.5.tgz#5ec4a16da0fd10c96538f715caed10dbdb180875"
   dependencies:
     cacache "^10.0.0"
     find-cache-dir "^1.0.0"
     schema-utils "^0.3.0"
     serialize-javascript "^1.4.0"
     source-map "^0.6.1"
-    uglify-es "^3.2.1"
+    uglify-es "3.2.2"
     webpack-sources "^1.0.1"
     worker-farm "^1.4.1"
 
@@ -5658,6 +5678,10 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vue-facebook-signin-button@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-facebook-signin-button/-/vue-facebook-signin-button-1.0.1.tgz#c6aadb160821846f2d7767fb8e691e0b9e682028"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"

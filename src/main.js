@@ -10,13 +10,15 @@ import 'element-ui/lib/theme-chalk/reset.css'
 import router from './router'
 import store from './store'
 import App from './components/App'
-// import TodoList from './components/TodoList'
-Vue.use(VueTouch);
-Vue.config.productionTip = false
+import FBSignInButton from 'vue-facebook-signin-button'
 
+Vue.config.productionTip = false
 axios.defaults.baseURL = 'http://api.fajarpatappari.tk:3000/api';
+// axios.defaults.baseURL = 'http://localhost:3000/api';
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
+Vue.use(FBSignInButton)
+Vue.use(VueTouch);
 Vue.use(Vuex)
 Vue.use(ElementUI, {size: 'large'})
 /* eslint-disable no-new */

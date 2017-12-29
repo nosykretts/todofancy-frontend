@@ -1,16 +1,12 @@
 <template>
-  <div>
+  <el-card class="box-card">
     <h1>This is Home</h1>
-    <todo-list/>
-  </div>
+  </el-card>
 </template>
 
 <script>
-import TodoList from './TodoList'
-
 export default {
   name: 'Home',
-  components: { TodoList },
   data() {
     return {
       msg: 'Welcome to Your Vue.js Appax',

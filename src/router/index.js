@@ -7,8 +7,14 @@ import LoginPage from '@/components/LoginPage'
 Vue.use(Router)
 
 let commonRoute = [
+  // {
+  //   path: '/',
+  //   name: 'homePage',
+  //   component: Home,
+  //   meta : {}
+  // },
   {
-    path: '/login',
+    path: '/',
     name: 'loginPage',
     component: LoginPage,
     meta : {}
@@ -17,7 +23,7 @@ let commonRoute = [
 
 let authRoute = [
   {
-    path: '/',
+    path: '/todo',
     name: 'todoPage',
     component: TodoList,
     meta: {}

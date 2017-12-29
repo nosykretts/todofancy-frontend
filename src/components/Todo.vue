@@ -1,80 +1,62 @@
 <template>
-  <el-row :gutter="20">
-    <div class="todo-row">
-      <el-col :span="2">
-        <el-checkbox v-model="completed"/>
-      </el-col>
-      <el-col :span="20">
-        <div v-if="!isEditing" class="green" v-on:dblclick="doEdit">{{todo.title}}</div>
-        <todo-input v-if="isEditing" :title="todo.title" @onHitEnter="updateTodo"/>
-      </el-col>
-      <el-col :span="2">
-        <p>
-          <i class="el-icon-close pull-right" @click="removeTodo(todo._id)"></i>
-        </p>
-      </el-col>
-    </div>
-  </el-row>
+  <div class="todo-row">
+    <todo-input :title="todo.title" @onFinishEdit="updateTodo">
+      <template slot="kiri">
+        <el-checkbox v-model="checked" />
+      </template>
+      <template slot="kanan">
+        <i class="el-icon-close" @click="removeTodo"></i>
+      </template>
+    </todo-input>
+  </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 import TodoInput from '@/components/TodoInput'
 
 export default {
   name: 'Todo',
   props: ['todo'],
-  data (){
+  data() {
     return {
-      isEditing : false,
     }
   },
-  components : {TodoInput},
-  methods : {
-    removeTodo(id){
-      this.$store.dispatch('removeTodo', {
-        id : id
-      })
+  components: {TodoInput},
+  methods: {
+    removeTodo() {
+      this.$store.dispatch('removeTodo', {todo: this.todo})
     },
-    updateTodo(title){
-      this.isEditing = false
-      this.$store.dispatch('updateTodo', {
-        id : this.todo._id,
-        title
-      })
-      console.log('UPDATE', this.todo._id, title)
-    },
-    doEdit(){
-      console.log('doEdit')
-      this.isEditing = true
+    updateTodo(title) {
+      if (title.length > 0) {
+        this.$store.dispatch('updateTodo', {
+          todo: this.todo,
+          title: title,
+        })
+      } else {
+        this.removeTodo()
+      }
     }
   },
   computed: {
-   completed: {
-     get(){
-       return this.todo && this.todo.completed ? true : false
-     },
-     set(checked){
-       console.log(checked)
-     }
-   }
-  }
+    checked: {
+      get() {
+        return this.todo.completed
+      },
+      set(checked) {
+        this.$store.dispatch('markTodo', {
+          todo: this.todo,
+          completed: checked,
+        })
+      },
+    },
+  },
 }
 </script>
 
 <style scoped>
-.pull-right{
-  float: right;
-}
-.todo-row{
+.todo-row {
   border-bottom: 1px solid #ebeef5;
-  margin-top: 20px;
-  background: rgb(249, 209, 209);
-  display: inline-block;
   width: 100%;
 }
-.green{
-  background: rgb(214, 249, 159);
-}
 </style>
-
