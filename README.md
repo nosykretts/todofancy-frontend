@@ -1,6 +1,11 @@
 # todo-fancy
 
-> Maintain you everyday todo
+> Maintain you everyday todo. 
+
+
+This is frontend version of this todo API repository  https://github.com/nosykretts/todo-rest-api
+
+
 
 ## Build Setup
 
