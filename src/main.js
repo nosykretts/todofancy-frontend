@@ -13,7 +13,7 @@ import App from './components/App'
 import FBSignInButton from 'vue-facebook-signin-button'
 
 Vue.config.productionTip = false
-axios.defaults.baseURL = 'http://api.fajarpatappari.tk:3000/api';
+axios.defaults.baseURL = 'http://api.fajarpatappari.tk:3003/api';
 // axios.defaults.baseURL = 'http://localhost:3000/api';
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token')
 
